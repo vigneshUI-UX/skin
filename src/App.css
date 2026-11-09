@@ -1,0 +1,259 @@
+/* ========================================
+   CINEMATIC HERO - SCROLL ANIMATION
+======================================== */
+
+.cinematic-hero {
+  position: relative;
+  width: 100%;
+  height: 260vh;
+  min-height: 0;
+  overflow: visible;
+}
+
+.cinematic-hero .hero-sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #f8f4ef;
+}
+
+.cinematic-hero .hero-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.cinematic-hero .hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(20, 25, 20, 0.48) 0%,
+    rgba(20, 25, 20, 0.20) 45%,
+    rgba(20, 25, 20, 0.02) 100%
+  );
+}
+
+.cinematic-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.cinematic-hero .hero-copy {
+  max-width: 580px;
+  color: #fff;
+}
+
+.cinematic-hero .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.cinematic-hero .hero-copy h1 {
+  margin: 0 0 24px;
+  font-size: clamp(52px, 6vw, 100px);
+  line-height: 0.98;
+  font-weight: 500;
+}
+
+.cinematic-hero .hero-copy h1 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.cinematic-hero .hero-copy p {
+  max-width: 450px;
+  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.cinematic-hero .hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.cinematic-hero .btn-petal {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 25px;
+  color: #263b2d;
+  background: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: 0.3s ease;
+}
+
+.cinematic-hero .btn-petal:hover {
+  color: #fff;
+  background: #526b50;
+  transform: translateY(-3px);
+}
+
+.cinematic-hero .hero-text-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.cinematic-hero .hero-note {
+  position: absolute;
+  right: 6%;
+  bottom: 12%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.cinematic-hero .hero-note-line {
+  width: 45px;
+  height: 1px;
+  background: #fff;
+}
+
+.cinematic-hero .hero-scroll {
+  position: absolute;
+  z-index: 3;
+  bottom: 35px;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+
+/* ========================================
+   2560px AND ULTRAWIDE SCREEN FIX
+======================================== */
+
+@media (min-width: 1921px) {
+  .cinematic-hero {
+    height: 260vh !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .cinematic-hero .hero-sticky {
+    position: sticky !important;
+    top: 0 !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    overflow: hidden !important;
+  }
+
+  .cinematic-hero .hero-canvas {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+  }
+
+  .cinematic-hero .hero-copy h1 {
+    font-size: clamp(80px, 5vw, 130px);
+  }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 991px) {
+  .cinematic-hero .hero-copy {
+    max-width: 480px;
+  }
+
+  .cinematic-hero .hero-copy h1 {
+    font-size: clamp(48px, 9vw, 75px);
+  }
+
+  .cinematic-hero .hero-note {
+    right: 5%;
+    bottom: 8%;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 576px) {
+  .cinematic-hero {
+    height: 220vh;
+  }
+
+  .cinematic-hero .hero-sticky {
+    height: 100svh;
+    min-height: 100svh;
+  }
+
+  .cinematic-hero .hero-content {
+    padding: 0 22px;
+  }
+
+  .cinematic-hero .hero-copy h1 {
+    font-size: 52px;
+  }
+
+  .cinematic-hero .hero-copy p {
+    font-size: 14px;
+  }
+
+  .cinematic-hero .hero-buttons {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .cinematic-hero .hero-note {
+    display: none;
+  }
+
+  .cinematic-hero .hero-scroll {
+    bottom: 22px;
+    white-space: nowrap;
+  }
+}
+
+/* ========================================
+   IMPORTANT: PREVENT STICKY BREAKING
+======================================== */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+#root,
+.website,
+main {
+  overflow: visible;
+}
