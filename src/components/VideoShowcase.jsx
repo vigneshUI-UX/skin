@@ -6,21 +6,21 @@ const videos = [
     title: "Your Daily Ritual",
     subtitle: "A softer start to every morning.",
     category: "SKINCARE ROUTINE",
-    src: "/videos/skincare-routine.mp4",
+    src: "videos/skincare-routine.mp4",
   },
   {
     id: 2,
     title: "A Drop of Glow",
     subtitle: "Discover the beauty of gentle serums.",
     category: "SERUM APPLICATION",
-    src: "/videos/serum-application.mp4",
+    src: "videos/serum-application.mp4",
   },
   {
     id: 3,
     title: "The Beauty of Texture",
     subtitle: "Soft, rich and beautifully nourishing.",
     category: "PRODUCT TEXTURE",
-    src: "/videos/product-texture.mp4",
+    src: "videos/product-texture.mp4",
   },
 ];
 
